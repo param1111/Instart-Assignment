@@ -24,14 +24,19 @@ function BlogGrid(props){
     return(
         <ul className = 'blogs'>
         {props.items.map((item,index)=>{
+            let itemLength = item.body.split('\n').length - 1;
             return(
           <li key={item.id} className='blog-item'>
             <ul className='space-list-items'>
               <h3>{item.title}</h3>
               <p className='date'>{new Date().toDateString()}</p>
-              <p>{item.body}</p>
-              <a className='read'>READ MORE</a>
+              {item.body.split('\n').map((data, index) => 
+                  <p className={`${index ===  itemLength ? 'blog-text' : null}`}>{data}</p>
+              )}
             </ul>
+            <div className='read'>
+                <a >READ MORE</a>
+            </div>
           </li>
             )
         })}
