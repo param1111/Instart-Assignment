@@ -20,6 +20,25 @@ function Footer(){
     )
 }
 
+function BlogGrid(props){
+    return(
+        <ul className = 'blogs'>
+        {props.items.map((item,index)=>{
+            return(
+          <li key={item.id} className='blog-item'>
+            <ul className='space-list-items'>
+              <h3>{item.title}</h3>
+              <p className='date'>{new Date().toDateString()}</p>
+              <p>{item.body}</p>
+              <a className='read'>READ MORE</a>
+            </ul>
+          </li>
+            )
+        })}
+        </ul>
+    )
+}
+
 class Instart extends React.Component{
     constructor(){
         super();
@@ -53,14 +72,7 @@ componentDidMount() {
             return (
                 <React.Fragment>
                     <Header />
-                    <ul>
-                        {items.map(item => (
-                            <li key={item.id}>
-                                {item.title}
-                                {item.body}
-                            </li>
-                        ))}
-                    </ul>
+                    <BlogGrid items = {items} />
                     <Footer/>
                 </React.Fragment>
                 

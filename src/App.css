@@ -4,7 +4,53 @@ body{
 }
 
 .blogs{
-  font-family:'Source Sans Pro'
+  font-family:'Source Sans Pro';
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+ul {
+  padding: 0;
+}
+
+li {
+  list-style-type: none;
+}
+
+.avatar {
+  width: 150px;
+  border-radius: 50%;
+}
+
+.space-list-items {
+  margin-bottom: 7px;
+  width: 250px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+.blog-item {
+  margin: 20px;
+  text-align: center;
+  padding: 20px;
+}
+
+.popular-rank {
+  font-size: 20px;
+  margin: 10px;
+}
+
+h4{
+  font-family:'Source Sans Pro';
+
+}
+
+.date{
+  font-family:'Source Sans Pro';
+  font-size: 12px;
 }
 
 .header{
